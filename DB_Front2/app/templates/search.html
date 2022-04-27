@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Columns</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/css/style.css">
+  <script source="js/index.js"></script>
+</head>
+
+<body>
+
+  <div class="topnav">
+    <a class="active" href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <form class="example" method="post" action="/usernamesearch" 
+         style="margin:auto;max-width:600px">
+    <input type="text" placeholder="Search by Username" name="username">
+    <button type="submit"><i class="fa fa-usernamesearch"></i>
+    </button>
+    </form>
+  </div>
+
+  <div class="container">
+    <!--Normally these medium columns go full wide on small screen sizes-->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="box skyblue">Search for a Tweet Here</div>
+      </div>
+      <div class="col-md-6">
+        <div class="box skyblue">Tweets</div>  
+      </div>
+      <div class="col-md-3">
+        <div class="box skyblue">Tweet Metrics</div>
+      </div>
+      </div>
+    </div>
+    <ul class="vertical menu drilldown" data-drilldown>
+      <li><a href="/usersearch">One</a></li>
+      <li>
+        <a href="/hashtagsearch">Two</a>
+        <ul class="menu vertical nested">
+          <li><a href="#">Two A</a></li>
+          <li><a href="#">Two B</a></li>
+          <li><a href="#">Two C</a></li>
+          <li><a href="#">Two D</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Three</a></li>
+      <li><a href="#">Four</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    {% for i in data %}
+        <tr>
+            <td> {{i}}</td>
+            </br>
+        </tr>
+    {% endfor %}
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
